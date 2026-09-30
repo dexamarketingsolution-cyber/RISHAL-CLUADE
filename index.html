@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rilshan Razik | Graphic Designer, Doha</title>
+<meta name="description" content="Rilshan Razik is a Doha-based graphic designer with 10+ years in branding, social media, print production, packaging and advertising.">
+<meta name="theme-color" content="#ECEEEA">
+<meta property="og:title" content="Rilshan Razik | Graphic Designer">
+<meta property="og:description" content="Branding, social media, print and advertising design from Doha, Qatar.">
+<meta property="og:image" content="/assets/rilshan.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a press sheet. Slug line, crop marks and a CMYK colour bar frame the page; content sits on a wide grid with generous bleed. */
+:root{
+  --paper:#ECEEEA;      /* uncoated stock, cool white */
+  --paper-2:#DDE1DA;    /* second sheet, for insets */
+  --paper-3:#F8F9F6;    /* brightest white, for page mockups */
+  --ink:#121417;        /* process K */
+  --ink-soft:#555B63;   /* 70% K for captions */
+  --rule:rgba(18,20,23,.16);
+  --c:#00AEEF; --m:#EC008C; --y:#FFE600;
+  --r:#ED1C24; --g:#00A651; --b:#2E3192;   /* overprint mixes */
+  --accent:var(--m);
+  --f-display:"Archivo","Arial Black",Impact,sans-serif;
+  --f-body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gutter:clamp(16px,4vw,56px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.55;overflow-x:clip;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--paper)}
+a{color:inherit}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{padding-inline:var(--gutter);max-width:1520px;margin-inline:auto}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:10px;margin:0}
+.eyebrow::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);transition:background .4s}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+h2{font-size:clamp(40px,7vw,104px);line-height:.9;font-weight:900;font-variation-settings:"wdth" 112;letter-spacing:-.02em;text-transform:uppercase}
+p{margin:0}
+
+/* paper grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:200;background:var(--paper);display:grid;place-items:center;align-content:center;gap:22px;
+  clip-path:inset(0 0 0 0);transition:clip-path .9s cubic-bezier(.7,0,.2,1);animation:loaderSafety 0s 3.2s forwards}
+.loader.done{clip-path:inset(0 0 100% 0)}
+@keyframes loaderSafety{to{visibility:hidden}}
+.loader-plates{display:flex;gap:8px}
+.loader-plates i{width:clamp(44px,9vw,84px);height:clamp(90px,18vw,160px);transform-origin:bottom;animation:plateIn .7s var(--ease) both}
+.loader-plates i:nth-child(1){background:var(--c)}
+.loader-plates i:nth-child(2){background:var(--m);animation-delay:.12s}
+.loader-plates i:nth-child(3){background:var(--y);animation-delay:.24s}
+.loader-plates i:nth-child(4){background:var(--ink);animation-delay:.36s}
+@keyframes plateIn{from{transform:scaleY(0)}}
+.loader-meta{display:flex;justify-content:space-between;width:min(360px,80vw);font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-variant-numeric:tabular-nums}
+
+/* ---------- cursor + fx ---------- */
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:150}
+.cursor,.cursor-dot{position:fixed;left:0;top:0;pointer-events:none;z-index:160;display:none}
+.has-cursor .cursor,.has-cursor .cursor-dot{display:block}
+.has-cursor, .has-cursor a, .has-cursor button{cursor:none}
+.cursor-dot{width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--ink)}
+.cursor{width:44px;height:44px;margin:-22px 0 0 -22px}
+.cursor-ring{position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:50%;transition:transform .35s var(--ease),background .3s,border-color .3s}
+.cursor-ring::before,.cursor-ring::after{content:"";position:absolute;background:var(--ink);transition:opacity .2s}
+.cursor-ring::before{left:50%;top:-8px;bottom:-8px;width:1.5px;margin-left:-.75px}
+.cursor-ring::after{top:50%;left:-8px;right:-8px;height:1.5px;margin-top:-.75px}
+.cursor.is-hover .cursor-ring{transform:scale(1.5);border-color:var(--accent)}
+.cursor.is-hover .cursor-ring::before,.cursor.is-hover .cursor-ring::after{opacity:0}
+.cursor.has-label .cursor-ring{transform:scale(2.1);background:var(--accent);border-color:var(--accent)}
+.cursor.is-down .cursor-ring{transform:scale(.7)}
+.cursor-label{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);opacity:0;transition:opacity .2s}
+.cursor.has-label .cursor-label{opacity:1}
+
+/* ---------- progress ---------- */
+.progress{position:fixed;left:0;right:0;top:0;height:4px;display:grid;grid-template-columns:repeat(4,1fr);z-index:120}
+.progress span{transform-origin:left;transform:scaleX(0)}
+.progress span:nth-child(1){background:var(--c)}.progress span:nth-child(2){background:var(--m)}
+.progress span:nth-child(3){background:var(--y)}.progress span:nth-child(4){background:var(--ink)}
+
+/* ---------- header ---------- */
+.header{position:fixed;top:0;left:0;right:0;z-index:110;padding-top:env(safe-area-inset-top,0px);pointer-events:none}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.header a,.header button{pointer-events:auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:15px;letter-spacing:.02em;text-transform:uppercase;background:var(--paper);padding:8px 12px 8px 8px;border-radius:40px}
+.logo svg{width:26px;height:26px;transition:transform .8s var(--ease)}
+.logo:hover svg{transform:rotate(180deg)}
+.nav{display:flex;gap:4px;background:var(--paper);border-radius:40px;padding:5px;border:1px solid var(--rule)}
+.nav a{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:9px 14px;border-radius:30px;transition:background .25s,color .25s;min-width:8ch;text-align:center}
+.nav a:hover{background:var(--ink);color:var(--paper)}
+.nav a.cta{background:var(--accent);color:var(--paper)}
+@media (max-width:760px){.nav a:not(.cta){display:none}}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:60px;border:1.5px solid var(--ink);font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;overflow:hidden;isolation:isolate;transition:translate .5s var(--ease),color .35s;background:none;color:var(--ink);cursor:pointer}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform:translateY(101%);border-radius:50% 50% 0 0;transition:transform .5s var(--ease),border-radius .5s}
+.btn:hover::before{transform:translateY(0);border-radius:0}
+.btn:hover{color:var(--paper)}
+.btn-t{display:inline-block;overflow:hidden;height:1.4em;line-height:1.4em}
+.btn-t span{display:block;text-shadow:0 1.4em currentColor;transition:transform .45s var(--ease)}
+.btn:hover .btn-t span{transform:translateY(-1.4em)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid::before{background:var(--accent)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-top:calc(96px + env(safe-area-inset-top,0px));padding-bottom:40px}
+.sheet{position:relative}
+.crop{position:absolute;width:22px;height:22px;pointer-events:none}
+.crop::before,.crop::after{content:"";position:absolute;background:var(--ink)}
+.crop::before{width:22px;height:1px}.crop::after{width:1px;height:22px}
+.crop.tl{left:calc(var(--gutter) - 30px);top:78px}
+.crop.tr{right:calc(var(--gutter) - 30px);top:78px;transform:scaleX(-1)}
+.crop.tl::before,.crop.tr::before{top:8px}.crop.tl::after,.crop.tr::after{left:8px}
+@media (max-width:700px){.crop{display:none}}
+.slug{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding-bottom:12px;margin-bottom:clamp(18px,3vw,36px)}
+.name{position:relative;font-size:clamp(52px,14.5vw,228px);line-height:.84;font-weight:900;font-variation-settings:"wdth" 125;letter-spacing:-.035em;text-transform:uppercase;margin:0;--mx:0;--my:0;--sv:0}
+.plate{display:block}
+.plate-c,.plate-m,.plate-y{position:absolute;inset:0;mix-blend-mode:multiply;pointer-events:none;user-select:none}
+.plate-c{color:var(--c);transform:translate(calc(var(--mx)*-9px + var(--sv)*-.35px),calc(var(--my)*-6px + var(--sv)*.25px))}
+.plate-m{color:var(--m);transform:translate(calc(var(--mx)*8px + var(--sv)*.3px),calc(var(--my)*4px + var(--sv)*-.2px))}
+.plate-y{color:var(--y);transform:translate(calc(var(--mx)*4px),calc(var(--my)*-9px + var(--sv)*.45px))}
+.plate-k{position:relative;color:var(--ink);mix-blend-mode:multiply}
+.plate-k .line{display:block}
+.plate-k .line:last-child{padding-left:clamp(0px,11vw,190px)}
+.plate:not(.plate-k) .line:last-child{padding-left:clamp(0px,11vw,190px)}
+.plate:not(.plate-k) .line{display:block}
+.is-ready .plate-c{animation:regC 1.4s .15s var(--ease) both}
+.is-ready .plate-m{animation:regM 1.4s .15s var(--ease) both}
+.is-ready .plate-y{animation:regY 1.4s .15s var(--ease) both}
+@keyframes regC{from{translate:-48px 22px}}
+@keyframes regM{from{translate:40px -18px}}
+@keyframes regY{from{translate:14px 46px}}
+.ch{display:inline-block}
+.is-ready .plate-k .ch{animation:rise .9s var(--ease) both;animation-delay:calc(var(--i) * 45ms)}
+@keyframes rise{from{opacity:0;transform:translateY(55%) rotate(6deg)}}
+
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;margin-top:clamp(28px,4vw,56px)}
+.hero-grid > *{min-width:0}
+.role{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 100;font-size:clamp(22px,2.4vw,34px);line-height:1.05;text-transform:uppercase;margin-bottom:14px}
+.role em{font-style:normal;color:var(--accent);transition:color .4s}
+.hero-intro p{max-width:46ch;color:var(--ink-soft)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+.portrait{position:relative;justify-self:center;width:min(100%,300px)}
+.portrait-frame{position:relative;aspect-ratio:291/315;max-width:100%;background:var(--y);overflow:hidden;rotate:-3deg;transition:rotate .6s var(--ease)}
+.portrait:hover .portrait-frame{rotate:0deg}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.12);transition:filter .6s}
+.portrait:hover .portrait-frame img{filter:grayscale(0) contrast(1)}
+.portrait-frame::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 45%,rgba(18,20,23,.14) 46%) 0 0/5px 5px;mix-blend-mode:multiply;transition:opacity .6s}
+.portrait:hover .portrait-frame::after{opacity:0}
+.portrait-shadow{position:absolute;inset:0;background:var(--c);translate:14px 14px;rotate:-3deg;z-index:-1;transition:translate .6s var(--ease),rotate .6s var(--ease)}
+.portrait:hover .portrait-shadow{translate:20px 20px;rotate:2deg}
+.tape{position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(236,238,234,.75);rotate:4deg;z-index:2;box-shadow:0 1px 2px rgba(18,20,23,.12)}
+.portrait-cap{margin-top:16px;display:flex;justify-content:space-between;gap:10px;color:var(--ink-soft)}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+.stat{padding:18px 0 16px;border-bottom:1px solid var(--rule)}
+.stat:nth-child(odd){padding-right:14px;border-right:1px solid var(--rule)}
+.stat:nth-child(even){padding-left:18px}
+.stat b{display:block;font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 120;font-size:clamp(40px,4.4vw,64px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+@media (max-width:1000px){.hero-grid{grid-template-columns:1fr 1fr}.stats{grid-column:1/-1}}
+@media (max-width:640px){.hero-grid{grid-template-columns:1fr}.portrait{justify-self:start;width:min(80%,280px)}}
+
+/* colour bar */
+.colorbar{margin-top:clamp(36px,5vw,64px)}
+.colorbar-row{display:grid;grid-template-columns:repeat(16,1fr);border:1px solid var(--ink)}
+.patch{position:relative;aspect-ratio:1.4;border:0;border-right:1px solid var(--ink);padding:0;cursor:pointer;transition:transform .35s var(--ease);background:var(--pc)}
+.patch:last-child{border-right:0}
+.patch:hover{transform:scaleY(1.35);z-index:2}
+.patch[aria-pressed="true"]::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 2px var(--ink)}
+.colorbar-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;color:var(--ink-soft)}
+@media (max-width:640px){.colorbar-row{grid-template-columns:repeat(8,1fr)}.patch:nth-child(8){border-right:0}.patch:nth-child(-n+8){border-bottom:1px solid var(--ink)}}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-block:1.5px solid var(--ink);padding-block:18px;background:var(--paper)}
+.marquee.ink{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-item{display:flex;align-items:center;gap:28px;padding-right:28px;font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 118;font-size:clamp(30px,5vw,72px);line-height:1;text-transform:uppercase;white-space:nowrap}
+.marquee-item.outline{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.marquee.ink .marquee-item.outline{-webkit-text-stroke-color:var(--paper)}
+.reg{width:.55em;height:.55em;flex:none}
+.marquee.small .marquee-item{font-size:clamp(18px,2.2vw,28px);font-variation-settings:"wdth" 100;font-weight:700;gap:18px;padding-right:18px}
+
+/* ---------- sections ---------- */
+section{scroll-margin-top:70px}
+.section{padding-block:clamp(80px,11vw,160px)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head > div:first-child{display:grid;gap:18px;min-width:0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px)}
+.about-grid > *{min-width:0}
+.about h2 .hl{position:relative;white-space:nowrap}
+.about h2 .hl::after{content:"";position:absolute;left:-.05em;right:-.05em;bottom:.08em;height:.26em;background:var(--y);z-index:-1;transform-origin:left;transform:scaleX(var(--hl,1));transition:transform 1s var(--ease)}
+.about h2{position:relative;z-index:0}
+.about-copy{display:grid;gap:20px;align-content:start;max-width:62ch}
+.about-copy .lead{font-size:clamp(19px,1.7vw,23px);line-height:1.45;color:var(--ink)}
+.about-copy p{color:var(--ink-soft)}
+.facts{list-style:none;padding:0;margin:14px 0 0;border-top:1px solid var(--ink)}
+.facts li{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.facts li > *{min-width:0}
+.facts dt,.facts .k{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.facts li{grid-template-columns:1fr;gap:4px}}
+
+/* services */
+.services{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.svc{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) auto;gap:24px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--rule);isolation:isolate;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--sc);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease)}
+.svc:hover::before{transform:scaleY(1)}
+.svc h3{font-size:clamp(26px,3.4vw,50px);font-weight:800;font-variation-settings:"wdth" 108;text-transform:uppercase;line-height:1;transition:transform .5s var(--ease)}
+.svc:hover h3{transform:translateX(14px)}
+.svc p{color:var(--ink-soft);max-width:44ch;transition:color .3s}
+.svc:hover p{color:var(--ink)}
+.svc .plate-tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;border:1px solid currentColor;padding:6px 10px;border-radius:30px;white-space:nowrap}
+.svc.dark:hover{color:var(--paper)}.svc.dark:hover p{color:var(--paper)}
+@media (max-width:760px){.svc{grid-template-columns:1fr;gap:10px}.svc .plate-tag{justify-self:start}}
+
+/* works */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:30px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .25s,color .25s}
+.chip:hover{background:var(--paper-2)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip sup{font-size:9px;margin-left:3px}
+.works{columns:3 300px;column-gap:clamp(16px,2.4vw,32px)}
+.work{break-inside:avoid;margin-bottom:clamp(28px,3.4vw,48px);display:grid;gap:14px}
+.work-btn{display:block;width:100%;border:0;padding:0;background:none;cursor:pointer;perspective:1000px;text-align:left}
+.work-art{position:relative;width:100%;max-width:100%;overflow:hidden;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;transition:transform .6s var(--ease),box-shadow .6s var(--ease);box-shadow:0 0 0 1px var(--rule)}
+.work-btn:hover .work-art{transition-duration:.15s,.6s;box-shadow:0 30px 60px -30px rgba(18,20,23,.5)}
+.work-art.tall{aspect-ratio:4/5}.work-art.square{aspect-ratio:1}.work-art.land{aspect-ratio:5/4}
+.work-art > img{width:100%;height:100%;object-fit:cover}
+.work-art .art,.work-art > img{transition:scale .9s var(--ease)}
+.work-btn:hover .art,.work-btn:hover .work-art > img{scale:1.05}
+.glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.45),transparent 45%);opacity:0;transition:opacity .4s;mix-blend-mode:soft-light}
+.work-btn:hover .glare{opacity:1}
+.work-cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px;border-top:1px solid var(--ink);padding-top:10px}
+.work-cap h3{font-size:clamp(20px,1.8vw,26px);font-weight:800;font-variation-settings:"wdth" 104;text-transform:uppercase;line-height:1.05}
+.work-cap p{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.work-cap > *{min-width:0}
+
+/* ---- generated work art (placeholders until real images are added) ---- */
+.art{position:absolute;inset:0;overflow:hidden}
+.a-grid{background:var(--ink);display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:5%;padding:11% 9%}
+.a-grid i{background:var(--paper);display:grid;place-items:center;font:normal 900 clamp(22px,3.6vw,54px)/1 var(--f-display);color:var(--ink);transition:transform .6s var(--ease)}
+.a-grid i:nth-child(2),.a-grid i:nth-child(9){background:var(--y)}
+.a-grid i:nth-child(4){background:var(--c)}
+.a-grid i:nth-child(6){background:var(--m);color:var(--paper)}
+.a-grid i:nth-child(8){background:var(--ink);color:var(--paper);outline:1.5px solid var(--paper);outline-offset:-1.5px}
+.work-btn:hover .a-grid i:nth-child(odd){transform:rotate(-6deg) scale(.92)}
+.work-btn:hover .a-grid i:nth-child(even){transform:rotate(5deg) scale(1.04)}
+
+.a-blobs{background:var(--ink)}
+.a-blobs i{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;filter:blur(18px);mix-blend-mode:screen;animation:drift 9s ease-in-out infinite alternate}
+.a-blobs i:nth-child(1){background:var(--c);left:-10%;top:5%}
+.a-blobs i:nth-child(2){background:var(--m);right:-15%;top:25%;animation-delay:-3s}
+.a-blobs i:nth-child(3){background:var(--y);left:15%;bottom:-20%;animation-delay:-6s}
+.a-blobs::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 38%,var(--ink) 40%) 0 0/7px 7px}
+.a-blobs b{position:absolute;left:8%;bottom:6%;z-index:2;font:900 clamp(60px,9vw,130px)/.8 var(--f-display);font-variation-settings:"wdth" 125;color:var(--paper);letter-spacing:-.04em}
+@keyframes drift{to{transform:translate(12%,-10%) scale(1.15)}}
+
+.a-die{background:var(--paper-2);display:grid;place-items:center}
+.a-die .net{width:74%;aspect-ratio:4/3;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr)}
+.a-die .net i{border:1.5px dashed var(--ink);margin:-.75px}
+.a-die .net i:nth-child(1){grid-area:1/2}
+.a-die .net i:nth-child(2){grid-area:2/1;background:var(--c)}
+.a-die .net i:nth-child(3){grid-area:2/2;background:var(--m);border-style:solid}
+.a-die .net i:nth-child(4){grid-area:2/3;background:var(--y)}
+.a-die .net i:nth-child(5){grid-area:2/4;background:var(--paper-3)}
+.a-die .net i:nth-child(6){grid-area:3/2}
+.a-die .net i:nth-child(1),.a-die .net i:nth-child(6){background:repeating-linear-gradient(45deg,transparent 0 6px,var(--rule) 6px 7px)}
+.spec{position:absolute;left:6%;bottom:5%;font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-soft)}
+.work-btn:hover .a-die .net{animation:wobble .8s var(--ease)}
+@keyframes wobble{40%{transform:rotate(-4deg) scale(1.03)}}
+
+.a-spread{background:var(--paper-2);display:grid;grid-template-columns:1fr 1fr;padding:12% 8%;gap:0}
+.a-spread .pg{background:var(--paper-3);padding:10% 9%;display:grid;align-content:start;gap:7%;box-shadow:0 12px 30px -16px rgba(18,20,23,.5)}
+.a-spread .l{box-shadow:inset -14px 0 18px -14px rgba(18,20,23,.3),0 12px 30px -16px rgba(18,20,23,.5)}
+.a-spread b{display:block;height:12%;min-height:14px;background:var(--ink)}
+.a-spread b + b{width:70%}
+.a-spread em,.a-spread s{display:block;height:44%;min-height:60px;background:repeating-linear-gradient(to bottom,var(--ink-soft) 0 1.5px,transparent 1.5px 7px);opacity:.55}
+.a-spread u{display:block;aspect-ratio:1;background:radial-gradient(circle,var(--c) 42%,transparent 44%) 0 0/8px 8px,var(--paper-3)}
+.work-btn:hover .a-spread u{background-size:5px 5px,auto;transition:background-size .6s}
+
+.a-sale{background:var(--c);display:grid;place-items:center}
+.a-sale b{font:900 clamp(90px,15vw,210px)/.8 var(--f-display);font-variation-settings:"wdth" 70;color:var(--ink);letter-spacing:-.04em}
+.a-sale b sup{font-size:.45em;vertical-align:.9em}
+.a-sale .sticker{position:absolute;right:9%;top:9%;width:30%;aspect-ratio:1;border-radius:50%;background:var(--y);display:grid;place-items:center;rotate:-14deg;font:800 clamp(14px,1.8vw,22px)/1 var(--f-display);text-transform:uppercase;transition:rotate .8s var(--ease)}
+.work-btn:hover .a-sale .sticker{rotate:346deg}
+.a-sale .strip{position:absolute;left:0;right:0;bottom:8%;background:var(--ink);color:var(--y);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;padding:8px 6%;text-transform:uppercase;white-space:nowrap}
+
+.a-phone{background:var(--m);display:grid;place-items:center}
+.a-phone .ph{position:absolute;width:40%;aspect-ratio:9/18;border-radius:18px;background:var(--ink);padding:5%;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:5px;align-content:start;transition:rotate .7s var(--ease),translate .7s var(--ease)}
+.a-phone .ph:nth-child(1){rotate:-10deg;translate:-30% 4%}
+.a-phone .ph:nth-child(2){rotate:8deg;translate:30% -3%}
+.a-phone .ph i{aspect-ratio:1;background:var(--paper)}
+.a-phone .ph i:nth-child(3n+2){background:var(--y)}
+.a-phone .ph i:nth-child(4n+1){background:var(--c)}
+.a-phone .ph i:first-child{grid-column:1/-1;aspect-ratio:2/1;background:var(--paper)}
+.work-btn:hover .a-phone .ph:nth-child(1){rotate:-16deg;translate:-38% 6%}
+.work-btn:hover .a-phone .ph:nth-child(2){rotate:14deg;translate:38% -5%}
+
+.a-mono{background:var(--paper-3);display:grid;place-items:center}
+.a-mono .venn{position:relative;width:62%;aspect-ratio:1}
+.a-mono .venn i{position:absolute;width:62%;aspect-ratio:1;border-radius:50%;mix-blend-mode:multiply;transition:translate .8s var(--ease)}
+.a-mono .venn i:nth-child(1){background:var(--c);left:0;top:0}
+.a-mono .venn i:nth-child(2){background:var(--m);right:0;top:0}
+.a-mono .venn i:nth-child(3){background:var(--y);left:19%;bottom:0}
+.work-btn:hover .a-mono .venn i:nth-child(1){translate:-8% -6%}
+.work-btn:hover .a-mono .venn i:nth-child(2){translate:8% -6%}
+.work-btn:hover .a-mono .venn i:nth-child(3){translate:0 8%}
+.a-mono .spec{color:var(--ink)}
+
+.a-arrow{background:var(--y)}
+.a-arrow .arr{position:absolute;inset:14% 10% 26% 10%;background:var(--ink);clip-path:polygon(0 35%,58% 35%,58% 8%,100% 50%,58% 92%,58% 65%,0 65%);transition:translate .6s var(--ease)}
+.work-btn:hover .a-arrow .arr{translate:8% 0}
+.a-arrow .txt{position:absolute;left:10%;right:10%;bottom:8%;display:flex;justify-content:space-between;font:800 clamp(18px,2.4vw,32px)/1 var(--f-display);font-variation-settings:"wdth" 80;text-transform:uppercase;border-top:3px solid var(--ink);padding-top:10px}
+
+/* modal */
+.modal{border:0;padding:0;width:min(1100px,calc(100vw - 32px));max-height:calc(100dvh - 32px);background:var(--paper);color:var(--ink);overflow:auto}
+.modal::backdrop{background:rgba(18,20,23,.72);backdrop-filter:blur(6px)}
+.modal[open]{animation:modalIn .5s var(--ease)}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px)}}
+.modal-inner{display:grid;grid-template-columns:1.2fr 1fr;min-height:min(620px,80dvh)}
+.modal-inner > *{min-width:0}
+.modal-art{position:relative;min-height:340px;background:var(--paper-2)}
+.modal-art > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.modal-info{padding:clamp(24px,4vw,48px);display:grid;gap:18px;align-content:end}
+.modal-info h3{font-size:clamp(32px,4vw,56px);font-weight:900;font-variation-settings:"wdth" 112;text-transform:uppercase;line-height:.92}
+.modal-info p{color:var(--ink-soft)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.tags li{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:5px 10px;border-radius:30px}
+.modal-close{position:absolute;top:14px;right:14px;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:var(--paper);font-size:24px;line-height:1;cursor:pointer;transition:rotate .4s var(--ease),background .3s;z-index:3}
+.modal-close:hover{rotate:90deg;background:var(--accent)}
+@media (max-width:760px){.modal-inner{grid-template-columns:1fr}.modal-art{aspect-ratio:4/3;min-height:0}}
+::view-transition-group(work-hero){animation-duration:.6s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+
+/* toolbox swatches */
+.swatches{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(10px,1.6vw,20px)}
+.swatch{background:var(--paper-3);padding:10px 10px 14px;box-shadow:0 1px 0 var(--rule),0 18px 30px -24px rgba(18,20,23,.55);transition:transform .5s var(--ease);display:grid;gap:12px;align-content:start}
+.swatch:nth-child(odd){transform:rotate(-2deg)}.swatch:nth-child(even){transform:rotate(1.5deg) translateY(10px)}
+.swatch:hover{transform:rotate(0) translateY(-14px) scale(1.04)}
+.swatch-chip{aspect-ratio:1/1.1;background:var(--sw);position:relative}
+.swatch-chip::after{content:attr(data-abbr);position:absolute;left:10px;bottom:8px;font:900 clamp(22px,2.6vw,36px)/1 var(--f-display);color:var(--paper);mix-blend-mode:normal}
+.swatch-chip.light::after{color:var(--ink)}
+.swatch strong{font-family:var(--f-display);font-weight:800;font-size:17px;text-transform:uppercase;line-height:1.1}
+.swatch small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-soft);margin-top:4px}
+@media (max-width:1000px){.swatches{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* experience */
+.xp{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.xp-row{border-bottom:1px solid var(--rule)}
+.xp-btn{position:relative;width:100%;display:grid;grid-template-columns:190px minmax(0,1fr) minmax(0,240px) 40px;gap:20px;align-items:center;padding:22px 6px;border:0;background:none;color:inherit;text-align:left;font:inherit;cursor:pointer;isolation:isolate;overflow:hidden}
+.xp-btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper-2);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.xp-btn:hover::before,.xp-btn[aria-expanded="true"]::before{transform:scaleX(1)}
+.xp-date{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.xp-role{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 104;font-size:clamp(19px,2vw,28px);line-height:1.1;text-transform:uppercase}
+.xp-co{display:block;font-family:var(--f-body);font-weight:500;font-size:15px;text-transform:none;color:var(--ink-soft);margin-top:4px;font-variation-settings:normal}
+.xp-loc{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.xp-plus{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--ink);position:relative;transition:rotate .4s var(--ease),background .3s}
+.xp-plus::before,.xp-plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;margin:-.75px 0 0 -6px;background:var(--ink)}
+.xp-plus::after{rotate:90deg}
+.xp-btn[aria-expanded="true"] .xp-plus{rotate:45deg;background:var(--y)}
+.xp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.xp-body.open{grid-template-rows:1fr}
+.xp-body > div{overflow:hidden}
+.xp-body ul{margin:0;padding:4px 6px 26px calc(190px + 26px);display:grid;gap:8px;color:var(--ink-soft);max-width:calc(190px + 26px + 70ch)}
+.xp-body li{list-style:none;position:relative;padding-left:20px}
+.xp-body li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.xp-tag{display:inline-block;margin-left:8px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;padding:3px 7px;border-radius:20px;vertical-align:middle;background:var(--tg);color:var(--ink)}
+@media (max-width:820px){.xp-btn{grid-template-columns:minmax(0,1fr) 40px;gap:6px 14px}.xp-date{grid-column:1/-1}.xp-loc{grid-column:1;grid-row:3}.xp-plus{grid-column:2;grid-row:2}.xp-body ul{padding-left:6px}}
+
+/* education + languages */
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);margin-top:clamp(60px,8vw,110px)}
+.edu > div{min-width:0}
+.edu h3{font-size:14px;font-family:var(--f-mono);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+.edu ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--ink)}
+.edu li{padding:12px 0;border-bottom:1px solid var(--rule);font-weight:500}
+.langs{display:flex;flex-wrap:wrap;gap:8px}
+.lang{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,2.4vw,32px);text-transform:uppercase;padding:8px 18px;border-radius:50px;border:1.5px solid var(--ink);transition:background .3s,color .3s,transform .4s var(--ease)}
+.lang:hover{background:var(--ink);color:var(--paper);transform:rotate(-4deg)}
+@media (max-width:760px){.edu{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.contact .eyebrow{color:#A9AEB5}
+.contact h2{font-size:clamp(46px,9vw,150px);max-width:14ch}
+.contact h2 .c-hl{color:var(--y)}
+.contact-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(32px,5vw,80px);margin-top:clamp(40px,5vw,72px);align-items:end}
+.contact-grid > *{min-width:0}
+.mail-line{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.mail{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 90;font-size:clamp(22px,3.4vw,48px);line-height:1.1;text-decoration:none;overflow-wrap:anywhere;background:linear-gradient(var(--y),var(--y)) 0 100%/0 3px no-repeat;transition:background-size .5s var(--ease)}
+.mail:hover{background-size:100% 3px}
+.contact .btn{border-color:var(--paper);color:var(--paper)}
+.contact .btn::before{background:var(--paper)}
+.contact .btn:hover{color:var(--ink)}
+.contact .btn.solid{background:var(--y);color:var(--ink);border-color:var(--y)}
+.contact .btn.solid::before{background:var(--paper)}
+.links{list-style:none;margin:0;padding:0;border-top:1px solid rgba(236,238,234,.35)}
+.links li{border-bottom:1px solid rgba(236,238,234,.18)}
+.links a,.links .row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 4px;text-decoration:none;transition:padding .4s var(--ease),color .3s}
+.links a:hover{padding-left:16px;color:var(--y)}
+.links span:first-child{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#A9AEB5}
+.links span:last-child{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.contact-plates{position:absolute;right:-6vw;top:-8vw;width:38vw;max-width:520px;aspect-ratio:1;pointer-events:none;opacity:.9}
+.contact-plates i{position:absolute;width:60%;aspect-ratio:1;border-radius:50%;mix-blend-mode:screen;opacity:.8;animation:orbit 16s linear infinite}
+.contact-plates i:nth-child(1){background:var(--c);left:0;top:10%}
+.contact-plates i:nth-child(2){background:var(--m);right:0;top:0;animation-delay:-5s}
+.contact-plates i:nth-child(3){background:var(--y);left:20%;bottom:0;animation-delay:-10s}
+@keyframes orbit{50%{transform:translate(8%,6%) scale(1.08)}}
+.contact .wrap{position:relative}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}.contact-plates{width:60vw;right:-20vw;top:-10vw}}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));translate:-50% 20px;background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:12px 18px;border-radius:40px;opacity:0;transition:opacity .3s,translate .4s var(--ease);z-index:170;pointer-events:none;box-shadow:0 0 0 1px rgba(236,238,234,.2)}
+.toast.show{opacity:1;translate:-50% 0}
+
+.footer{background:var(--ink);color:#A9AEB5;border-top:1px solid rgba(236,238,234,.18)}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:22px calc(22px + env(safe-area-inset-bottom,0px))}
+.footer a{text-decoration:none}.footer a:hover{color:var(--y)}
+
+/* reveal: scroll-driven where supported, observer fallback otherwise */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    .swatches .swatch{animation:rvSw linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+  }
+}
+@keyframes rv{from{opacity:0;translate:0 48px}}
+@keyframes rvSw{from{opacity:0;translate:0 80px;rotate:8deg}}
+.rv-pending{opacity:0;translate:0 48px}
+.rv-in{opacity:1;translate:0 0;transition:opacity .9s var(--ease),translate .9s var(--ease)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .loader{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-plates"><i></i><i></i><i></i><i></i></div>
+  <div class="loader-meta"><span>Registering plates</span><span class="loader-num" id="loaderNum">000%</span></div>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><div class="cursor-ring"></div><div class="cursor-label"></div></div>
+<div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Rilshan Razik, back to top">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="13" cy="13" r="3.2" fill="currentColor"/><path d="M13 0v26M0 13h26" stroke="currentColor" stroke-width="1.6"/></svg>
+      Rilshan
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Career</a>
+      <a class="cta" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero sheet" id="top">
+  <span class="crop tl" aria-hidden="true"></span><span class="crop tr" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="slug mono" aria-hidden="true">
+      <span>Job: Portfolio 2026</span><span>Sheet 01 / 01</span><span>4/0 CMYK · 300 DPI</span><span>Doha, Qatar</span>
+    </div>
+
+    <h1 class="name" id="name" aria-label="Rilshan Razik">
+      <span class="plate plate-c" aria-hidden="true"><span class="line">Rilshan</span><span class="line">Razik</span></span>
+      <span class="plate plate-m" aria-hidden="true"><span class="line">Rilshan</span><span class="line">Razik</span></span>
+      <span class="plate plate-y" aria-hidden="true"><span class="line">Rilshan</span><span class="line">Razik</span></span>
+      <span class="plate plate-k" aria-hidden="true"><span class="line">Rilshan</span><span class="line">Razik</span></span>
+    </h1>
+
+    <div class="hero-grid">
+      <div class="hero-intro">
+        <p class="role">Graphic designer for <em>brands</em>, print &amp; social</p>
+        <p>Over ten years turning briefs into press-ready print, scroll-stopping social posts and brand systems that stay consistent everywhere they appear. Based in Doha, working across Qatar, the UAE and Sri Lanka.</p>
+        <div class="hero-ctas">
+          <a class="btn solid magnetic" href="#work" data-cursor="Scroll"><span class="btn-t"><span>See the work</span></span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a class="btn magnetic" href="assets/Rilshan-Razik-CV.pdf" target="_blank" rel="noopener" data-cursor="PDF"><span class="btn-t"><span>Download CV</span></span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12h8M8 2v7M5 6l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        </div>
+      </div>
+
+      <figure class="portrait" style="margin:0">
+        <span class="tape" aria-hidden="true"></span>
+        <div class="portrait-shadow" aria-hidden="true"></div>
+        <div class="portrait-frame"><img src="assets/rilshan.jpg" alt="Portrait of Rilshan Razik" width="291" height="315"></div>
+        <figcaption class="portrait-cap mono"><span>Fig. 01</span><span>Hover to go full colour</span></figcaption>
+      </figure>
+
+      <div class="stats">
+        <div class="stat"><b data-count="10" data-suffix="+">10+</b><span>Years in design</span></div>
+        <div class="stat"><b data-count="3">3</b><span>Countries worked</span></div>
+        <div class="stat"><b data-count="6">6</b><span>Languages spoken</span></div>
+        <div class="stat"><b data-count="11">11</b><span>Trade shows attended</span></div>
+      </div>
+    </div>
+
+    <div class="colorbar">
+      <div class="colorbar-row" id="colorbar" role="group" aria-label="Colour bar. Pick a patch to change the page accent"></div>
+      <div class="colorbar-meta mono"><span>Control strip · tap a patch to re-ink the page</span><span id="inkName">Accent: M100</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee ink" data-speed="0.6">
+  <div class="marquee-track">
+    <div class="marquee-item">Branding <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item outline">Print design <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Social media <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#FFE600" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#FFE600" stroke-width="2"/></svg></div>
+    <div class="marquee-item outline">Advertising <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Packaging <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item outline">AI-assisted design <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#FFE600" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#FFE600" stroke-width="2"/></svg></div>
+  </div>
+</div>
+
+<!-- ================= WORK ================= -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2 class="rv">Off the press</h2>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter work by discipline"></div>
+    </div>
+    <div class="works" id="works"></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section about" id="about" style="padding-top:0">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2 class="rv" style="margin-top:18px">Design that <span class="hl">sells</span> and stays on brand</h2>
+    </div>
+    <div class="about-copy rv">
+      <p class="lead">I'm Rilshan, a graphic designer with more than a decade across branding, advertising, print production and digital marketing.</p>
+      <p>My career started on the print floor, preparing artwork for offset presses in the UAE and Qatar. That's where I learned bleeds, dielines and colour that holds up on paper. Since then I've led social media design for a Doha law firm, built marketing material for trading companies and run marketing for a distributor in Sri Lanka. I design with the sales goal in view, because I've worked on that side too.</p>
+      <p>Today I combine Adobe Creative Suite with AI-assisted tools to concept faster, then finish every piece by hand to brand standard.</p>
+      <ul class="facts">
+        <li><span class="k">Based in</span><span>Doha, Qatar</span></li>
+        <li><span class="k">Focus</span><span>Branding, social media, print &amp; packaging, advertising</span></li>
+        <li><span class="k">Currently</span><span>Graphic Designer, Social Media Marketing at Mashael Alsulaiti Law Firm</span></li>
+        <li><span class="k">Also good at</span><span>Client coordination, procurement, market research</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">What I make</p><h2 class="rv">Services</h2></div></div>
+    <ul class="services">
+      <li class="svc" style="--sc:var(--c)"><h3>Brand identity</h3><p>Logos, colour, type and the rules that keep a brand consistent across print and screen.</p><span class="plate-tag">C 100</span></li>
+      <li class="svc dark" style="--sc:var(--m)"><h3>Social media content</h3><p>Post series, carousels and campaign creatives built for thumb-scroll speed and on-brand every time.</p><span class="plate-tag">M 100</span></li>
+      <li class="svc" style="--sc:var(--y)"><h3>Print &amp; packaging</h3><p>Press-ready artwork for offset and digital print, from brochures and flyers to dielines and boxes.</p><span class="plate-tag">Y 100</span></li>
+      <li class="svc dark" style="--sc:var(--ink)"><h3>Advertising</h3><p>Press ads, outdoor and promotional material for launches, sales and seasonal campaigns.</p><span class="plate-tag">K 100</span></li>
+      <li class="svc" style="--sc:var(--c)"><h3>Editorial layout</h3><p>Magazine pages, catalogues and company profiles with clear typographic hierarchy.</p><span class="plate-tag">C 100</span></li>
+      <li class="svc dark" style="--sc:var(--m)"><h3>AI-assisted design</h3><p>Faster concepts and production with AI tools, refined by hand before anything ships.</p><span class="plate-tag">M 100</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= TOOLBOX ================= -->
+<section class="section" id="tools" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Toolbox</p><h2 class="rv">Swatch book</h2></div>
+      <p class="mono" style="color:var(--ink-soft);max-width:36ch">Each tool mixed from process inks, the way I'd spec it for press.</p></div>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-chip" style="--sw:var(--c)" data-abbr="Ps"></div><div><strong>Photoshop</strong><small>C100 M0 Y0 K0</small></div></div>
+      <div class="swatch"><div class="swatch-chip light" style="--sw:var(--y)" data-abbr="Ai"></div><div><strong>Illustrator</strong><small>C0 M0 Y100 K0</small></div></div>
+      <div class="swatch"><div class="swatch-chip" style="--sw:var(--m)" data-abbr="Id"></div><div><strong>InDesign</strong><small>C0 M100 Y0 K0</small></div></div>
+      <div class="swatch"><div class="swatch-chip" style="--sw:var(--g)" data-abbr="Cdr"></div><div><strong>CorelDraw</strong><small>C100 M0 Y100 K0</small></div></div>
+      <div class="swatch"><div class="swatch-chip" style="--sw:var(--r)" data-abbr="Pm"></div><div><strong>PageMaker</strong><small>C0 M100 Y100 K0</small></div></div>
+      <div class="swatch"><div class="swatch-chip" style="--sw:var(--b)" data-abbr="AI"></div><div><strong>AI tools</strong><small>C100 M100 Y0 K0</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="section" id="experience" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Career, newest first</p><h2 class="rv">Experience</h2></div>
+      <p class="mono" style="color:var(--ink-soft)">Tap a row to expand</p></div>
+    <ol class="xp" id="xp"></ol>
+
+    <div class="edu">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li>Diploma in Desktop Publishing &amp; Graphic Designing</li>
+          <li>Diploma in Business Management, Level 4</li>
+          <li>Diploma in Hardware Engineering &amp; Networking</li>
+          <li>Diploma in Microsoft Office Applications</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <div class="langs">
+          <span class="lang">English</span><span class="lang">Malayalam</span><span class="lang">Arabic</span><span class="lang">Hindi</span><span class="lang">Tamil</span><span class="lang">Sinhala</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee small" data-speed="0.45" data-dir="right" aria-label="Exhibitions and events attended">
+  <div class="marquee-track">
+    <div class="marquee-item">Project Qatar · 2013 &amp; 2025 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">125th Canton Fair, China · 2019 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Index Qatar Design Exhibition · 2017 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Print Expo, Sri Lanka · 2019 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item">China Hardware Fair, Yiwu · 2019 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Made in China, Qatar · 2017 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Qatar Toy Festival · 2024 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Qatar Outlet Exhibition · 2024 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Doha Summer Trade &amp; Shopping · 2025 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#EC008C" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#EC008C" stroke-width="2"/></svg></div>
+    <div class="marquee-item">Civil Defence Exhibition, Qatar · 2013 <svg class="reg" viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="8" fill="none" stroke="#00AEEF" stroke-width="2"/><path d="M13 0v26M0 13h26" stroke="#00AEEF" stroke-width="2"/></svg></div>
+  </div>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="contact-plates" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="rv" style="margin-top:18px">Got a brief? Let's go to <span class="c-hl">press.</span></h2>
+    <div class="contact-grid">
+      <div>
+        <div class="mail-line">
+          <a class="mail" id="mail" href="mailto:designer.rilshan@gmail.com" data-cursor="Write">designer.rilshan@gmail.com</a>
+        </div>
+        <div class="hero-ctas">
+          <button class="btn solid magnetic" type="button" id="copyMail" data-cursor="Copy"><span class="btn-t"><span>Copy email</span></span></button>
+          <a class="btn magnetic" href="https://wa.me/97433801398" target="_blank" rel="noopener" data-cursor="Chat"><span class="btn-t"><span>WhatsApp</span></span></a>
+        </div>
+      </div>
+      <ul class="links">
+        <li><div class="row"><span>Phone</span><span>+974 3380 1398</span></div></li>
+        <li><a href="https://www.linkedin.com/in/rilshan-razik" target="_blank" rel="noopener" data-cursor="Visit"><span>LinkedIn</span><span>in/rilshan-razik ↗</span></a></li>
+        <li><a href="https://www.rilshangraphics.com" target="_blank" rel="noopener" data-cursor="Visit"><span>Website</span><span>rilshangraphics.com ↗</span></a></li>
+        <li><a href="assets/Rilshan-Razik-CV.pdf" target="_blank" rel="noopener" data-cursor="PDF"><span>Résumé</span><span>Download CV (PDF) ↗</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap mono">
+    <span>© <span id="year">2026</span> Rilshan Razik</span>
+    <span>Printed in Doha · C M Y K</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<dialog class="modal" id="modal" aria-labelledby="mTitle">
+  <div class="modal-inner">
+    <div class="modal-art" id="mArt"></div>
+    <div class="modal-info">
+      <p class="eyebrow" id="mMeta"></p>
+      <h3 id="mTitle"></h3>
+      <p id="mBlurb"></p>
+      <ul class="tags" id="mTags"></ul>
+      <p class="mono" style="color:var(--ink-soft)">Client / studio: <span id="mClient"></span></p>
+    </div>
+  </div>
+  <button class="modal-close" id="mClose" type="button" aria-label="Close project" data-cursor="Close">×</button>
+</dialog>
+
+<script>
+/* =====================================================================
+   YOUR WORK — edit this list.
+   To show a real project, put the image in /assets/works/ and set
+   image: "assets/works/your-file.jpg". Leave image empty to show the
+   generated CMYK artwork instead.
+   cat must be one of the keys in CATS below.
+   shape: "tall" (4:5), "square" (1:1) or "land" (5:4)
+   ===================================================================== */
+const CATS = { all:"All", social:"Social media", print:"Print & packaging", brand:"Branding", editorial:"Editorial", ads:"Advertising" };
+
+const WORKS = [
+  { id:"legal-social", title:"Legal social series", cat:"social", year:"2023–now", client:"Mashael Alsulaiti Law Firm, Doha",
+    shape:"tall", art:"grid", image:"",
+    blurb:"Ongoing social media design for a Doha law firm: post series aligned with the firm's identity and marketing goals, built to explain legal topics clearly.",
+    tags:["Instagram","LinkedIn","Campaigns"] },
+  { id:"ai-visuals", title:"AI-assisted visuals", cat:"social", year:"2024–now", client:"In-house",
+    shape:"square", art:"blobs", image:"",
+    blurb:"AI-assisted content to speed up concepting and production while keeping audience engagement high. Every output is refined by hand before publishing.",
+    tags:["AI tools","Photoshop","Content"] },
+  { id:"offset-pack", title:"Offset & packaging", cat:"print", year:"2009–2011", client:"Speed Line Printing and Packaging, Doha",
+    shape:"land", art:"dieline", image:"",
+    blurb:"Custom artwork for offset and digital print jobs, from packaging dielines to commercial print, prepared to each customer's specification.",
+    tags:["Dielines","Prepress","Offset"] },
+  { id:"weekly", title:"Magazine layouts", cat:"editorial", year:"2015–2016", client:"The Weekly, Qatar",
+    shape:"land", art:"spread", image:"",
+    blurb:"Senior graphic designer for a Qatar weekly publication, working on page layouts with a clear typographic hierarchy.",
+    tags:["InDesign","Layout","Typography"] },
+  { id:"galaxy-ads", title:"Print ad campaigns", cat:"ads", year:"2011–2014", client:"Galaxy Media (Printing & Advertising), Doha",
+    shape:"tall", art:"sale", image:"",
+    blurb:"Print and digital advertising for client campaigns, built from layout, typography, imagery and brand elements to support promotional goals.",
+    tags:["Press ads","Promotions","Branding"] },
+  { id:"cign-social", title:"Client brand socials", cat:"social", year:"2022", client:"CIGN, Doha",
+    shape:"square", art:"phone", image:"",
+    blurb:"Social media designs for agency clients, keeping graphics, print and other marketing communication consistent with each client's visual identity.",
+    tags:["Agency","Social","Brand guidelines"] },
+  { id:"greenmass", title:"Trade marketing kit", cat:"brand", year:"2022–2023", client:"Green Mass International Trading, Doha",
+    shape:"tall", art:"mono", image:"",
+    blurb:"Marketing materials supporting promotion, customer communication and new business initiatives for a trading company.",
+    tags:["Brand kit","Brochures","Sales support"] },
+  { id:"alshaab", title:"Regional ad artwork", cat:"ads", year:"2004–2006", client:"Al Shaab Printing & Advertising, UAE",
+    shape:"square", art:"arrow", image:"",
+    blurb:"Marketing and advertising materials for regional clients and promotional campaigns, prepared to production requirements.",
+    tags:["Advertising","Print","UAE"] },
+];
+
+/* Career, newest first. tag: design | marketing | projects */
+const XP = [
+  { from:"Sep 2023", to:"Present", role:"Graphic Designer, Social Media Marketing", co:"Mashael Alsulaiti Law Firm", loc:"Doha, Qatar", tag:"design",
+    pts:["Design social media posts aligned with brand identity and marketing objectives.","Create content supporting marketing campaigns and audience engagement.","Use AI-assisted tools to improve creative development and production efficiency."] },
+  { from:"Oct 2022", to:"Jun 2023", role:"Graphic Designer", co:"Green Mass International Trading W.L.L", loc:"Doha, Qatar", tag:"design",
+    pts:["Designed marketing materials supporting promotion, customer communication and business initiatives.","Supported marketing, customer relations and development.","Coordinated procurement of hardware and material products."] },
+  { from:"Mar 2022", to:"Aug 2022", role:"Senior Graphic Designer", co:"CIGN", loc:"Doha, Qatar", tag:"design",
+    pts:["Developed social media designs aligned with client branding and marketing objectives.","Kept social graphics, printed materials and other communications consistent.","Prepared promotional materials to client specifications and identity requirements."] },
+  { from:"Dec 2019", to:"Nov 2021", role:"Marketing Manager", co:"Unico Trade Marketing (Pvt) Ltd", loc:"Sri Lanka", tag:"marketing",
+    pts:["Managed marketing, procurement, distribution, research and supplier coordination.","Coordinated distribution of hardware and household products.","Worked with suppliers on availability, requirements and pricing."] },
+  { from:"Aug 2017", to:"Mar 2018", role:"Project Coordinator, Building Façade Lighting", co:"Dynamic Solution", loc:"Doha, Qatar", tag:"projects",
+    pts:["Coordinated project execution, procurement and façade lighting installations.","Supervised site activities against schedules and execution plans."] },
+  { from:"Jun 2015", to:"Apr 2016", role:"Senior Graphic Designer", co:"The Weekly", loc:"Qatar", tag:"design",
+    pts:["Senior graphic designer for a Qatar weekly publication."] },
+  { from:"Mar 2011", to:"Dec 2014", role:"Senior Graphic Designer / Marketing Executive", co:"Galaxy Media (Printing & Advertising)", loc:"Doha, Qatar", tag:"design",
+    pts:["Developed print and digital advertising content for clients and campaigns.","Designed advertising materials for promotional and brand communication.","Created print ads using layout, typography, imagery and branding elements."] },
+  { from:"Feb 2009", to:"Jan 2011", role:"Graphic Designer", co:"Speed Line Printing and Packaging Company", loc:"Doha, Qatar", tag:"design",
+    pts:["Created custom design solutions for offset and digital printing.","Developed artwork for offset print projects to customer specifications.","Coordinated design requirements directly with customers."] },
+  { from:"Jul 2006", to:"Oct 2008", role:"Marketing Executive", co:"Wescom Information Technology", loc:"Colombo, Sri Lanka", tag:"marketing",
+    pts:["Promoted IT products and services to new and existing customers.","Communicated product information clearly to support customers."] },
+  { from:"Sep 2004", to:"Feb 2006", role:"Graphic Designer", co:"Al Shaab Printing & Advertising", loc:"UAE", tag:"design",
+    pts:["Produced marketing and advertising materials for regional clients.","Created visual content with layout, typography, imagery and branding.","Prepared printed materials to customer and production requirements."] },
+];
+
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const root = document.documentElement;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const fine = matchMedia("(pointer: fine)").matches;
+  const cssVar = n => getComputedStyle(root).getPropertyValue(n).trim();
+
+  /* ---------- generated artwork ---------- */
+  const ART = {
+    grid:  () => `<div class="art a-grid">${["§","“","?","Aa","¶","!","&","→","*"].map(c => `<i>${c}</i>`).join("")}</div>`,
+    blobs: () => `<div class="art a-blobs"><i></i><i></i><i></i><b>AI</b></div>`,
+    dieline:() => `<div class="art a-die"><div class="net">${"<i></i>".repeat(6)}</div><span class="spec">DIELINE · 350 GSM · 4/0</span></div>`,
+    spread:() => `<div class="art a-spread"><div class="pg l"><b></b><b></b><em></em></div><div class="pg r"><u></u><s></s></div></div>`,
+    sale:  () => `<div class="art a-sale"><b>50<sup>%</sup></b><span class="sticker">Off</span><span class="strip">Weekend only · All stores · Doha</span></div>`,
+    phone: () => `<div class="art a-phone">${`<div class="ph">${"<i></i>".repeat(7)}</div>`.repeat(2)}</div>`,
+    mono:  () => `<div class="art a-mono"><div class="venn"><i></i><i></i><i></i></div><span class="spec">BRAND KIT · V2</span></div>`,
+    arrow: () => `<div class="art a-arrow"><div class="arr"></div><div class="txt"><span>This way</span><span>→ Hall 3</span></div></div>`,
+  };
+  const artFor = w => w.image ? `<img src="${w.image}" alt="${w.title}" loading="lazy">` : ART[w.art]();
+
+  /* ---------- works ---------- */
+  const worksEl = $("#works"), filtersEl = $("#filters");
+  worksEl.innerHTML = WORKS.map(w => `
+    <article class="work rv" data-cat="${w.cat}" style="view-transition-name:w-${w.id}">
+      <button class="work-btn" type="button" data-id="${w.id}" data-cursor="Open" aria-label="Open project: ${w.title}">
+        <div class="work-art ${w.shape}">${artFor(w)}<span class="glare"></span></div>
+      </button>
+      <div class="work-cap"><h3>${w.title}</h3><p>${CATS[w.cat]} · ${w.year}</p></div>
+    </article>`).join("");
+
+  const counts = WORKS.reduce((a, w) => (a[w.cat] = (a[w.cat] || 0) + 1, a), {});
+  filtersEl.innerHTML = Object.entries(CATS)
+    .filter(([k]) => k === "all" || counts[k])
+    .map(([k, v]) => `<button class="chip" type="button" data-cat="${k}" aria-pressed="${k === "all"}">${v}<sup>${k === "all" ? WORKS.length : counts[k]}</sup></button>`).join("");
+
+  filtersEl.addEventListener("click", e => {
+    const b = e.target.closest(".chip"); if (!b) return;
+    const cat = b.dataset.cat;
+    $$(".chip", filtersEl).forEach(c => c.setAttribute("aria-pressed", c === b));
+    const run = () => $$(".work", worksEl).forEach(el => { el.hidden = !(cat === "all" || el.dataset.cat === cat); });
+    if (document.startViewTransition && !reduce) document.startViewTransition(run); else run();
+  });
+
+  // 3D tilt + glare
+  $$(".work-btn").forEach(btn => {
+    const art = btn.firstElementChild;
+    btn.addEventListener("pointermove", e => {
+      if (!fine || reduce) return;
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      art.style.setProperty("--rx", ((0.5 - y) * 10).toFixed(2) + "deg");
+      art.style.setProperty("--ry", ((x - 0.5) * 12).toFixed(2) + "deg");
+      art.style.setProperty("--gx", (x * 100).toFixed(1) + "%");
+      art.style.setProperty("--gy", (y * 100).toFixed(1) + "%");
+    });
+    btn.addEventListener("pointerleave", () => { art.style.setProperty("--rx", "0deg"); art.style.setProperty("--ry", "0deg"); });
+    btn.addEventListener("click", () => openWork(btn.dataset.id, art));
+  });
+
+  /* ---------- modal with view-transition morph ---------- */
+  const modal = $("#modal"), mArt = $("#mArt");
+  let lastArt = null;
+  const vt = fn => (document.startViewTransition && !reduce) ? document.startViewTransition(fn) : fn();
+  function openWork(id, srcArt) {
+    const w = WORKS.find(x => x.id === id); if (!w) return;
+    lastArt = srcArt;
+    srcArt.style.viewTransitionName = "work-hero";
+    vt(() => {
+      mArt.innerHTML = artFor(w);
+      $("#mTitle").textContent = w.title;
+      $("#mMeta").textContent = `${CATS[w.cat]} · ${w.year}`;
+      $("#mBlurb").textContent = w.blurb;
+      $("#mClient").textContent = w.client;
+      $("#mTags").innerHTML = w.tags.map(t => `<li>${t}</li>`).join("");
+      srcArt.style.viewTransitionName = "";
+      mArt.style.viewTransitionName = "work-hero";
+      if (!modal.open) modal.showModal();
+    });
+  }
+  function closeWork() {
+    if (!modal.open) return;
+    vt(() => {
+      mArt.style.viewTransitionName = "";
+      if (lastArt) lastArt.style.viewTransitionName = "work-hero";
+      modal.close();
+    });
+    setTimeout(() => { if (lastArt) lastArt.style.viewTransitionName = ""; }, 700);
+  }
+  $("#mClose").addEventListener("click", closeWork);
+  modal.addEventListener("cancel", e => { e.preventDefault(); closeWork(); });
+  modal.addEventListener("click", e => { if (e.target === modal) closeWork(); });
+
+  /* ---------- experience ---------- */
+  const TAGC = { design:"var(--y)", marketing:"var(--c)", projects:"var(--paper-2)" };
+  $("#xp").innerHTML = XP.map((x, i) => `
+    <li class="xp-row rv">
+      <button class="xp-btn" type="button" aria-expanded="${i === 0}" aria-controls="xp-${i}">
+        <span class="xp-date">${x.from} – ${x.to}</span>
+        <span class="xp-role">${x.role}<span class="xp-tag" style="--tg:${TAGC[x.tag]}">${x.tag}</span><span class="xp-co">${x.co}</span></span>
+        <span class="xp-loc">${x.loc}</span>
+        <span class="xp-plus" aria-hidden="true"></span>
+      </button>
+      <div class="xp-body${i === 0 ? " open" : ""}" id="xp-${i}"><div><ul>${x.pts.map(p => `<li>${p}</li>`).join("")}</ul></div></div>
+    </li>`).join("");
+  $("#xp").addEventListener("click", e => {
+    const b = e.target.closest(".xp-btn"); if (!b) return;
+    const open = b.getAttribute("aria-expanded") !== "true";
+    b.setAttribute("aria-expanded", open);
+    $("#" + b.getAttribute("aria-controls")).classList.toggle("open", open);
+  });
+
+  /* ---------- colour bar ---------- */
+  const INKS = [["C","--c"],["M","--m"],["Y","--y"],["K","--ink"]];
+  const TINTS = [100, 75, 50, 25];
+  const bar = $("#colorbar");
+  bar.innerHTML = INKS.flatMap(([n, v]) => TINTS.map(t =>
+    `<button class="patch" type="button" data-ink="${v}" data-name="${n}${t}" aria-label="${n} ${t} percent" aria-pressed="${n === "M" && t === 100}"
+      style="--pc:color-mix(in srgb, var(${v}) ${t}%, var(--paper-3))"></button>`)).join("");
+  bar.addEventListener("click", e => {
+    const p = e.target.closest(".patch"); if (!p) return;
+    const t = parseInt(p.dataset.name.slice(1), 10);
+    const ink = p.dataset.ink === "--y" ? "#E0C400" : `var(${p.dataset.ink})`; // darken yellow so text stays legible
+    root.style.setProperty("--accent", t === 100 ? ink : `color-mix(in srgb, ${ink} ${Math.max(t, 60)}%, var(--ink))`);
+    $$(".patch", bar).forEach(x => x.setAttribute("aria-pressed", x === p));
+    $("#inkName").textContent = "Accent: " + p.dataset.name;
+    toast(`Page re-inked with ${p.dataset.name}`);
+  });
+
+  /* ---------- toast ---------- */
+  const toastEl = $("#toast"); let tt;
+  function toast(msg) { toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove("show"), 1800); }
+
+  /* ---------- copy email ---------- */
+  $("#copyMail").addEventListener("click", () => {
+    const text = "designer.rilshan@gmail.com";
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents($("#mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Email selected, press copy"); };
+    try { navigator.clipboard.writeText(text).then(() => toast("Email copied"), fallback); } catch { fallback(); }
+  });
+
+  /* ---------- split hero letters ---------- */
+  let ci = 0;
+  $$(".plate-k .line").forEach(line => {
+    line.innerHTML = [...line.textContent].map(ch => `<span class="ch" style="--i:${ci++}">${ch}</span>`).join("");
+  });
+
+  /* ---------- loader ---------- */
+  const loader = $("#loader"), num = $("#loaderNum");
+  function ready() {
+    root.classList.add("is-ready");
+    loader.classList.add("done");
+    setTimeout(() => loader.remove(), 1000);
+    countUp();
+  }
+  if (reduce) { loader.remove(); root.classList.add("is-ready"); }
+  else {
+    const t0 = performance.now(), D = 1000;
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / D);
+      num.textContent = String(Math.round(p * 100)).padStart(3, "0") + "%";
+      if (p < 1) requestAnimationFrame(tick); else setTimeout(ready, 150);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- counters ---------- */
+  function countUp() {
+    if (reduce) return;
+    $$("[data-count]").forEach(el => {
+      const end = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
+      const step = now => { const p = Math.min(1, (now - t0) / 1400); const e = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(end * e) + suf; if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    });
+  }
+
+  /* ---------- custom cursor ---------- */
+  const cur = $(".cursor"), dot = $(".cursor-dot"), label = $(".cursor-label");
+  let px = innerWidth / 2, py = innerHeight / 2, cx = px, cy = py;
+  if (fine) {
+    root.classList.add("has-cursor");
+    addEventListener("pointermove", e => { px = e.clientX; py = e.clientY; dot.style.transform = `translate(${px}px,${py}px)`; }, { passive: true });
+    document.addEventListener("pointerover", e => {
+      const t = e.target.closest("a,button,[data-cursor]");
+      cur.classList.toggle("is-hover", !!t);
+      const l = t && t.dataset.cursor;
+      cur.classList.toggle("has-label", !!l);
+      label.textContent = l || "";
+    });
+    addEventListener("pointerdown", () => cur.classList.add("is-down"));
+    addEventListener("pointerup", () => cur.classList.remove("is-down"));
+    document.addEventListener("pointerleave", () => { cur.style.opacity = dot.style.opacity = 0; });
+    document.addEventListener("pointerenter", () => { cur.style.opacity = dot.style.opacity = 1; });
+  }
+
+  /* ---------- click burst: CMYK halftone dots + registration ring ---------- */
+  const fx = $("#fx"), ctx = fx.getContext("2d");
+  let parts = [], rings = [], running = false, dpr = 1;
+  const size = () => { dpr = Math.min(devicePixelRatio || 1, 2); fx.width = innerWidth * dpr; fx.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+  size(); addEventListener("resize", size);
+  addEventListener("pointerdown", e => {
+    if (reduce) return;
+    const cols = [cssVar("--c"), cssVar("--m"), cssVar("--y"), cssVar("--ink")];
+    for (let i = 0; i < 18; i++) {
+      const a = Math.random() * Math.PI * 2, s = 2 + Math.random() * 6;
+      parts.push({ x: e.clientX, y: e.clientY, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 1.5, r: 2 + Math.random() * 5, c: cols[i % 4], life: 1 });
+    }
+    rings.push({ x: e.clientX, y: e.clientY, r: 4, life: 1, c: cols[Math.random() * 3 | 0] });
+    if (!running) { running = true; requestAnimationFrame(draw); }
+  });
+  function draw() {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    rings = rings.filter(g => g.life > 0);
+    rings.forEach(g => {
+      g.r += (70 - g.r) * 0.12; g.life -= 0.03;
+      ctx.globalAlpha = Math.max(g.life, 0); ctx.strokeStyle = g.c; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(g.x, g.y, g.r, 0, Math.PI * 2); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(g.x - g.r - 10, g.y); ctx.lineTo(g.x + g.r + 10, g.y);
+      ctx.moveTo(g.x, g.y - g.r - 10); ctx.lineTo(g.x, g.y + g.r + 10); ctx.stroke();
+    });
+    parts = parts.filter(p => p.life > 0);
+    parts.forEach(p => {
+      p.vy += 0.18; p.vx *= 0.97; p.x += p.vx; p.y += p.vy; p.life -= 0.022;
+      ctx.globalAlpha = Math.max(p.life, 0); ctx.fillStyle = p.c; ctx.globalCompositeOperation = "multiply";
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r * p.life + 0.5, 0, Math.PI * 2); ctx.fill();
+      ctx.globalCompositeOperation = "source-over";
+    });
+    ctx.globalAlpha = 1;
+    if (parts.length || rings.length) requestAnimationFrame(draw); else { running = false; ctx.clearRect(0, 0, innerWidth, innerHeight); }
+  }
+
+  /* ---------- magnetic buttons ---------- */
+  if (fine && !reduce) $$(".magnetic").forEach(el => {
+    el.addEventListener("pointermove", e => {
+      const r = el.getBoundingClientRect();
+      el.style.translate = `${(e.clientX - r.left - r.width / 2) * 0.25}px ${(e.clientY - r.top - r.height / 2) * 0.35}px`;
+    });
+    el.addEventListener("pointerleave", () => { el.style.translate = "0 0"; });
+  });
+
+  /* ---------- scrambled nav labels ---------- */
+  const GLYPHS = "CMYK#%&*+=/<>";
+  $$(".nav a").forEach(a => {
+    const orig = a.textContent;
+    a.addEventListener("pointerenter", () => {
+      if (reduce) return;
+      let f = 0; cancelAnimationFrame(a._r);
+      const step = () => {
+        a.textContent = [...orig].map((ch, i) => i < f / 2 ? orig[i] : ch === " " ? " " : GLYPHS[Math.random() * GLYPHS.length | 0]).join("");
+        if (++f <= orig.length * 2) a._r = requestAnimationFrame(step); else a.textContent = orig;
+      };
+      step();
+    });
+  });
+
+  /* ---------- marquees ---------- */
+  const marquees = $$(".marquee").map(m => {
+    const track = $(".marquee-track", m);
+    const clone = track.innerHTML;
+    track.insertAdjacentHTML("beforeend", clone.replace(/class="marquee-item/g, 'aria-hidden="true" class="marquee-item'));
+    const o = { m, track, x: 0, dir: m.dataset.dir === "right" ? 1 : -1, speed: +m.dataset.speed || 0.5, on: true };
+    new IntersectionObserver(([en]) => { o.on = en.isIntersecting; }).observe(m);
+    return o;
+  });
+
+  /* ---------- hero misregistration + scroll velocity ---------- */
+  const hero = $(".hero"), name = $("#name");
+  let tmx = 0, tmy = 0, mx = 0, my = 0, vel = 0, lastY = scrollY, sign = 1;
+  if (fine) {
+    hero.addEventListener("pointermove", e => { const r = hero.getBoundingClientRect(); tmx = (e.clientX - r.left) / r.width * 2 - 1; tmy = (e.clientY - r.top) / r.height * 2 - 1; });
+    hero.addEventListener("pointerleave", () => { tmx = tmy = 0; });
+  }
+
+  /* ---------- progress bar ---------- */
+  const segs = $$(".progress span");
+
+  function frame() {
+    const y = scrollY, dy = y - lastY; lastY = y;
+    vel += (dy - vel) * 0.12;
+    if (Math.abs(dy) > 0.5) sign = dy > 0 ? 1 : -1;
+
+    if (!reduce) {
+      mx += (tmx - mx) * 0.08; my += (tmy - my) * 0.08;
+      name.style.setProperty("--mx", mx.toFixed(3));
+      name.style.setProperty("--my", my.toFixed(3));
+      name.style.setProperty("--sv", Math.max(-40, Math.min(40, vel)).toFixed(2));
+      marquees.forEach(o => {
+        if (!o.on) return;
+        const half = o.track.scrollWidth / 2;
+        o.x += (o.speed + Math.min(Math.abs(vel) * 0.25, 12)) * o.dir * sign;
+        if (o.x <= -half) o.x += half; if (o.x > 0) o.x -= half;
+        o.track.style.transform = `translate3d(${o.x}px,0,0)`;
+      });
+    }
+    if (fine) {
+      const k = reduce ? 1 : 0.18;
+      cx += (px - cx) * k; cy += (py - cy) * k;
+      cur.style.transform = `translate(${cx}px,${cy}px)`;
+    }
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? y / max : 0;
+    segs.forEach((s, i) => { s.style.transform = `scaleX(${Math.max(0, Math.min(1, (p - i / 4) * 4))})`; });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* ---------- reveal fallback (no scroll-driven animations) ---------- */
+  if (!reduce && !CSS.supports("animation-timeline: view()") && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(ens => ens.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add("rv-in"); en.target.classList.remove("rv-pending"); io.unobserve(en.target); }
+    }), { rootMargin: "0px 0px -8% 0px" });
+    $$(".rv").forEach(el => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add("rv-pending"); io.observe(el); } });
+  }
+
+  /* ---------- about highlight draws in ---------- */
+  const hl = $(".about .hl");
+  if (hl && !reduce) {
+    const io2 = new IntersectionObserver(([en]) => { if (en.isIntersecting) { hl.style.setProperty("--hl", 1); io2.disconnect(); } }, { threshold: 1 });
+    if (hl.getBoundingClientRect().top > innerHeight) { hl.style.setProperty("--hl", 0); io2.observe(hl); }
+  }
+
+  $("#year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
